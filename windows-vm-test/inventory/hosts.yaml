@@ -1,0 +1,15 @@
+all:
+  children:
+    windows:
+      hosts:
+        win-vm-01:
+          ansible_host: 10.0.1.4
+        win-vm-02:
+          ansible_host: 10.0.1.5
+
+      vars:
+        ansible_user: ansibleuser
+        ansible_password: Thisisatest123!
+        ansible_connection: winrm
+        ansible_winrm_transport: basic
+        ansible_winrm_server_cert_validation: ignore
