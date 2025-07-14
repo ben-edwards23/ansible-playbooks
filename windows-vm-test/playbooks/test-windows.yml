@@ -1,0 +1,18 @@
+---
+- name: Simple test playbook for Windows
+  hosts: windows
+  gather_facts: no
+
+  tasks:
+    - name: Ping the Windows host
+      win_ping:
+
+    - name: Create a folder on the C drive
+      win_file:
+        path: C:\Ansible
+        state: directory
+
+    - name: Create a text file in that folder
+      win_copy:
+        content: "Hello from Ansible!"
+        dest: C:\Ansible\hello.txt
